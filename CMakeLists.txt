@@ -3,4 +3,6 @@ project(ImageEnhancementFiltering)
 
 set(CMAKE_CXX_STANDARD 26)
 
-add_executable(ImageEnhancementFiltering main.cpp)
+add_executable(ImageEnhancementFiltering main.cpp
+        Enhancement.cpp
+)

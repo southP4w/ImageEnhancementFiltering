@@ -55,6 +55,12 @@ build CMakeFiles/ImageEnhancementFiltering.dir/main.cpp.obj: CXX_COMPILER__Image
   OBJECT_DIR = CMakeFiles\ImageEnhancementFiltering.dir
   OBJECT_FILE_DIR = CMakeFiles\ImageEnhancementFiltering.dir
 
+build CMakeFiles/ImageEnhancementFiltering.dir/Enhancement.cpp.obj: CXX_COMPILER__ImageEnhancementFiltering_unscanned_Debug C$:/Users/Dan/CLionProjects/ImageEnhancementFiltering/Enhancement.cpp || cmake_object_order_depends_target_ImageEnhancementFiltering
+  DEP_FILE = CMakeFiles\ImageEnhancementFiltering.dir\Enhancement.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ImageEnhancementFiltering.dir
+  OBJECT_FILE_DIR = CMakeFiles\ImageEnhancementFiltering.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ImageEnhancementFiltering
@@ -63,7 +69,7 @@ build CMakeFiles/ImageEnhancementFiltering.dir/main.cpp.obj: CXX_COMPILER__Image
 #############################################
 # Link the executable ImageEnhancementFiltering.exe
 
-build ImageEnhancementFiltering.exe: CXX_EXECUTABLE_LINKER__ImageEnhancementFiltering_Debug CMakeFiles/ImageEnhancementFiltering.dir/main.cpp.obj
+build ImageEnhancementFiltering.exe: CXX_EXECUTABLE_LINKER__ImageEnhancementFiltering_Debug CMakeFiles/ImageEnhancementFiltering.dir/main.cpp.obj CMakeFiles/ImageEnhancementFiltering.dir/Enhancement.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ImageEnhancementFiltering.dir
