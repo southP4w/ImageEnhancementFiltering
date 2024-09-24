@@ -20,9 +20,12 @@ private:
 	int neighbor1DAry[9];	// holds a pixel [i][j]'s 3×3 neighbors, for easy computation
 public:
 	Enhancement();
-	void binThreshold(int **, std::ofstream &);						//
-	void prettyPrint(int **, std::ofstream &logFile);				// print the int** to logFile
-	void mirrorFraming(int **, int **, std::ofstream &logFile);		// use `mirrorFmAry`
-	void loadImage(std::ifstream &inFile, std::ofstream &logFile);	// load into `mirrorFmAry`
+	void binThreshold(int **inArray, std::ofstream &);		//
+	void prettyPrint(int **, std::ofstream &);				// print the int** to ofstream
+	void mirrorFraming(std::ofstream &);					// use `mirrorFmAry`: [1][]->[0][], [numRows+1][]->[numRows][]; [][1]->[0][], [][numCols+1]->[][numCols]
+	void loadImage(std::ifstream &, std::ofstream &);		// load ifstream into `mirrorFmAry` starting at [1][1]
+	int loadMask(std::ifstream &, std::ofstream &);			// load ifstream (the maskFile) onto mask2DAry and return maskWeight
+	void loadMask2Dto1D(std::ofstream &);					//
+
 	~Enhancement();
 };
