@@ -1,15 +1,20 @@
 #include <fstream>
 #include <iostream>
+
 void validateUserArguments(int, char **);
+
 int main(int argc, char **argv) {
 	validateUserArguments(argc, argv);
 
 	std::ifstream inFile(argv[1]);
 	std::ifstream maskFile(argv[2]);
+	int thrVal = atoi(argv[3]);
 	std::ofstream avgFile(argv[4]);
 	std::ofstream medianFile(argv[5]);
 	std::ofstream gaussFile(argv[6]);
 	std::ofstream logFile(argv[7]);
+
+	logFile << "The threshold value = " << thrVal << std::endl;
 
 	inFile.close();
 	maskFile.close();
@@ -22,8 +27,8 @@ int main(int argc, char **argv) {
 void validateUserArguments(int argc, char **argv) {
 	if (argc != 8) {
 		std::cout << "Your command line must include seven parameters: inFile, "
-					 "maskFile, thrVal, avgFile, medianFile, gaussFile, logFile"
-				  << std::endl;
+			   "maskFile, thrVal, avgFile, medianFile, gaussFile, logFile"
+				<< std::endl;
 		exit(1);
 	}
 
