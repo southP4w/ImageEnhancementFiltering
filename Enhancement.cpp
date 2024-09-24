@@ -18,6 +18,10 @@ private:
 	int mask1DAry[9];		// holds the 9 pixels of the mask, for easy convolution computation
 	int maskWeight;			// the total value of the mask; can be computed during loadMask
 	int neighbor1DAry[9];	// holds a pixel [i][j]'s 3×3 neighbors, for easy computation
+
+	int **sort(int **);										// Bubble sort
+	int convolution(std::ofstream &);						//
+	void loadNeighbor2Dto1D(std::ofstream &);				//
 public:
 	Enhancement();
 	void binThreshold(int **inArray, std::ofstream &);		//
@@ -26,6 +30,9 @@ public:
 	void loadImage(std::ifstream &, std::ofstream &);		// load ifstream into `mirrorFmAry` starting at [1][1]
 	int loadMask(std::ifstream &, std::ofstream &);			// load ifstream (the maskFile) onto mask2DAry and return maskWeight
 	void loadMask2Dto1D(std::ofstream &);					//
-
+	void print1DAry(int *, std::ofstream &);				//
+	void computeMedian(std::ofstream &);					//
+	void computeAvg(std::ofstream &);						//
+	void computeGauss(std::ofstream &);						//
 	~Enhancement();
 };
